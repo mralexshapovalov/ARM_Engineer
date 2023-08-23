@@ -29,7 +29,6 @@ namespace ARM_Engineer
         public DateTime DateOfBirth { get; set; }
         public string Post { get; set; }
         public double Salary { get; set; }
-
         public Employee(int id ,string surname, string name, string patronymic, 
             string description, DateTime dateOfBirth, string post, double salary) 
         {
