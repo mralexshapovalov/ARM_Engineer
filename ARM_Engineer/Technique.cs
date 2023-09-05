@@ -27,7 +27,6 @@ namespace ARM_Engineer
         public string IdentificationNumber { get; set; }  //Вин номер 
         public DateTime YearOfRelease { get; set; } //Год выпуска
         public double EngineCapacity { get; set; } //Объем двигателя
-
         public int HP { get; set; } //Лошадинные силы
 
         public Technique(int id, string classOfEquipment, string brand, string model, string inventoryNumber, string stateNumber, 

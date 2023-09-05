@@ -21,21 +21,19 @@ namespace ARM_Engineer
         public string NameParts { get; set; } //Наименование детали
         public string UnitofMeanSurement { get; set; } //Единица измерения
         public string Unit { get; set; } //Агрегат
-        public string Uzel { get; set; } //Узел
+        public string Node { get; set; } //Узел
         public double Cost { get; set; } //Цена
 
-        public Part(int id, string article, string nameParts, string unitofMeanSurement, string unit, string uzel,
-            double cost)
+        public Part(int id, string article, string nameParts, string unitofMeanSurement, string unit, string node, double cost)
         {
             Id = id;
             Article = article;
             NameParts = nameParts;
             UnitofMeanSurement = unitofMeanSurement;
             Unit = unit;
-            Uzel = uzel;
+            Node = node;
            
         }
-
         public Part(Part part)
         {
             Id = id;
@@ -43,7 +41,7 @@ namespace ARM_Engineer
             NameParts = part.NameParts;
             UnitofMeanSurement = part.UnitofMeanSurement;
             Unit = part.Unit;
-            Uzel = part.Uzel;
+            Node = part.Node;
         }
 
         public void AddPartToDatabase()

@@ -3,23 +3,78 @@ using ARM_Engineer;
 
 class Program
 {
+    enum States
+    {
+        MainMenu = 0,
+        EmployeeMenu = 1,
+        TechiqueMenu = 2,
+        PartMenu = 3
+    }
+
     private static void Main(string[] args)
     {
+        States state = States.MainMenu;
 
-        Employee employeeOne = new Employee(001, "Шаповалов", "Александр", "Александрович", "-------", DateTime.Now, "-----", 10000);
-
-      
-        try
+        while (true)
         {
-            employeeOne.AddEmployeeToDatabase();
+
+            switch(state)
+            {
+                case States.MainMenu:
+                    ConsoleInterface.ShowMainMenu();
+                    break;
+                case States.EmployeeMenu:
+                    ConsoleInterface.ShowEmployeeMenu();
+                    break;
+                case States.TechiqueMenu:
+                    ConsoleInterface.ShowTechiqueMenu();
+                    break;
+                case States.PartMenu:
+                    ConsoleInterface.ShowPartMenu();
+                    break;
+                default:
+                    break;
+            }
+
+            //Console.WriteLine("\nВыберите вариант:");
+            //Console.WriteLine("1. Сотрудники");
+            //Console.WriteLine("2. Техника");
+            //Console.WriteLine("3. Запасные части");
+            //Console.WriteLine("Esc. Выход из программы");
+            
+            //ConsoleKeyInfo value = Console.ReadKey();
+
+            //switch (value.Key) 
+            //{
+            //    case ConsoleKey.D1:
+            //        ConsoleInterface.ShowEmployeeMenu();
+                    
+            //        while(true)
+            //        {
+            //           value = Console.ReadKey();
+            //        }
+                    
+            //        break;
+            //    case ConsoleKey.D2:
+            //        ConsoleInterface.ShowTechiqueMenu();
+            //        value = Console.ReadKey();
+            //        break;
+            //    case ConsoleKey.D3:
+            //        ConsoleInterface.ShowPartMenu();
+            //        value = Console.ReadKey();
+            //        break;
+            //    case ConsoleKey.Escape:
+            //        return;
+            //        break;
+            //    default:
+            //        Console.WriteLine("Такой команды не существует. Повторите снова.");
+            //        break;
+                   
+                       
+            
+            
+
         }
-        catch 
-        {
-            Console.WriteLine("Не удалось добавить сотрудника в БД.Повторит снова");
-        }
-
-
-
 
     }
 }
