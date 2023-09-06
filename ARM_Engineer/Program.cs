@@ -4,12 +4,12 @@ using ARM_Engineer;
 class Program
 {
    public enum States
-    {
+   {
         MainMenu = 0,
         EmployeeMenu = 1,
         TechiqueMenu = 2,
         PartMenu = 3
-    }
+   }
 
     private static void Main(string[] args)
     {
