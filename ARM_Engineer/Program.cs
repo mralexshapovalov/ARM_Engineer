@@ -3,7 +3,7 @@ using ARM_Engineer;
 
 class Program
 {
-    enum States
+   public enum States
     {
         MainMenu = 0,
         EmployeeMenu = 1,
@@ -13,12 +13,12 @@ class Program
 
     private static void Main(string[] args)
     {
-        States state = States.MainMenu;
-
+        ConsoleInterface.ShowMainMenu();
+      
         while (true)
         {
-
-            switch(state)
+            States state = (States)Class1.A();
+            switch (state)
             {
                 case States.MainMenu:
                     ConsoleInterface.ShowMainMenu();
@@ -33,8 +33,10 @@ class Program
                     ConsoleInterface.ShowPartMenu();
                     break;
                 default:
+                    Console.WriteLine("Такой команды не существует. Повторите снова.");
                     break;
             }
+            
 
             //Console.WriteLine("\nВыберите вариант:");
             //Console.WriteLine("1. Сотрудники");
@@ -75,6 +77,7 @@ class Program
             
 
         }
+
 
     }
 }

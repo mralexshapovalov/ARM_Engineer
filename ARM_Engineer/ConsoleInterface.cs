@@ -28,7 +28,7 @@ namespace ARM_Engineer
             Console.WriteLine("2. Edit techique card");
             Console.WriteLine("3. Deleted techique");
             Console.WriteLine("4. Output techique information");
-            Console.WriteLine("4. Display a list of techique");
+            Console.WriteLine("5. Display a list of techique");
             Console.WriteLine("Esc. Return main menu");
         }
 
