@@ -11,54 +11,33 @@ namespace ARM_Engineer
     {
         public static int A()
         {
-            
-
             while (true)
             {
-              
-                var n = Convert.ToInt32(Console.ReadLine());
-                //var key = Console.ReadKey();
-                foreach (var i in Enum.GetValues(typeof(States)))
+                var key = Console.ReadKey();
+                char value = key.KeyChar;
+
+
+                if (key.Key == ConsoleKey.Escape)
                 {
-                    if( ((int)i == n))
-                    {
-                        return n;
-                    }
+
+
+                    Environment.Exit(0);
+
+                    //if(key.Key > 0)
+                    //{
+                    //    Environment.Exit(0);
+                    //}
+                    //else
+                    //{
+                    //    return -1 ;
+                    //}
                 }
+                //value = /*int.Parse(key.KeyChar.ToString());*/
+                value = int.Parse(key.KeyChar.ToString());
 
-                //if(key.Key == ConsoleKey.Escape)
-                //{
+                return value;
                     
-
-
-                //    if (n > 0)
-                //    {
-                //        return n--;
-                //    }
-                    
-
-                    
-
-                    
-                        
-
-
-                //}
-
-               
-
-
-               
-
-
-
-
-
-
-
-            }
-
-            
+            }            
         }
     }
 }
