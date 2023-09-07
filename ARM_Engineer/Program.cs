@@ -3,7 +3,7 @@ using ARM_Engineer;
 
 class Program
 {
-   public enum States
+   enum States
    {
         MainMenu = 0,
         EmployeeMenu = 1,
@@ -13,18 +13,25 @@ class Program
 
     private static void Main(string[] args)
     {
-        ConsoleInterface.ShowMainMenu();
-      
+
+        List<Employee> employees = new List<Employee>();
+       
+        States state = States.EmployeeMenu;
+        ConsoleKey command = ConsoleKey.Spacebar;
+
+        ConsoleInputInterpreter consoleInputInterpreter = new ConsoleInputInterpreter(employees);
+
         while (true)
         {
-            States state = (States)Class1.A();
             switch (state)
             {
                 case States.MainMenu:
                     ConsoleInterface.ShowMainMenu();
+
                     break;
                 case States.EmployeeMenu:
                     ConsoleInterface.ShowEmployeeMenu();
+                    consoleInputInterpreter.InterpretEmployeeCommand(command);
                     break;
                 case States.TechiqueMenu:
                     ConsoleInterface.ShowTechiqueMenu();
@@ -33,50 +40,20 @@ class Program
                     ConsoleInterface.ShowPartMenu();
                     break;
                 default:
-                    Console.WriteLine("Такой команды не существует. Повторите снова.");
+                    Console.Write("\n!ERROR.There is no such command. Please repeat again.\n");
+                    ConsoleInterface.ShowMainMenu();
                     break;
             }
-            
+            Console.Write(">> ");
+            command = Console.ReadKey().Key;
+            Console.WriteLine();
 
-            //Console.WriteLine("\nВыберите вариант:");
-            //Console.WriteLine("1. Сотрудники");
-            //Console.WriteLine("2. Техника");
-            //Console.WriteLine("3. Запасные части");
-            //Console.WriteLine("Esc. Выход из программы");
             
-            //ConsoleKeyInfo value = Console.ReadKey();
-
-            //switch (value.Key) 
-            //{
-            //    case ConsoleKey.D1:
-            //        ConsoleInterface.ShowEmployeeMenu();
-                    
-            //        while(true)
-            //        {
-            //           value = Console.ReadKey();
-            //        }
-                    
-            //        break;
-            //    case ConsoleKey.D2:
-            //        ConsoleInterface.ShowTechiqueMenu();
-            //        value = Console.ReadKey();
-            //        break;
-            //    case ConsoleKey.D3:
-            //        ConsoleInterface.ShowPartMenu();
-            //        value = Console.ReadKey();
-            //        break;
-            //    case ConsoleKey.Escape:
-            //        return;
-            //        break;
-            //    default:
-            //        Console.WriteLine("Такой команды не существует. Повторите снова.");
-            //        break;
-                   
-                       
-            
-            
+             
 
         }
+
+        
 
 
     }

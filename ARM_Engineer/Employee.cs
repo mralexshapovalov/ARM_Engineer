@@ -9,14 +9,13 @@ using System.Xml.Linq;
 
 namespace ARM_Engineer
 {
-    class Employee
+    public class Employee
     {
         private int id;
         public int Id
         {
             get 
-            {
-                
+            {                
                 return id; 
             }
             private set { id = value; }
@@ -54,11 +53,35 @@ namespace ARM_Engineer
             Salary = employee.Salary;
         }
 
+        static public Employee CreateEmployeeWithConsole()
+        {
+            Console.Write("Enter Id: ");
+            int id = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter Name: ");
+            string name = Console.ReadLine();
+            Console.Write("Enter Surname: ");
+            string surname = Console.ReadLine();
+            Console.Write("Enter Patronymic: ");
+            string patronymic = Console.ReadLine();
+            Console.Write("Enter Description: ");
+            string description = Console.ReadLine();
+            Console.Write("Enter Date of birthday: ");
+            DateTime dateOfBirth = DateTime.Parse(Console.ReadLine());
+            Console.Write("Enter Post: ");
+            string post = Console.ReadLine();
+            Console.Write("Enter salary: ");
+            double salary = Convert.ToDouble(Console.ReadLine());
+
+            return new Employee(id, name, surname, patronymic, description, dateOfBirth, post, salary);
+        }
+        static public List<Employee> ReadDataBaseToList()
+        {
+            throw new NotImplementedException();
+        }
         public void AddEmployeeToDatabase()
         {
             throw new NotImplementedException();
         }
-
         public void DismissalEmployeeToDataBase(int id)
         {
             throw new NotImplementedException();

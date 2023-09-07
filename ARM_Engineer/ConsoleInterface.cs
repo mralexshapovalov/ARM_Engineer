@@ -13,7 +13,7 @@ namespace ARM_Engineer
         public static void ShowEmployeeMenu()
         {
             Console.WriteLine("\nEmployee Menu");
-            Console.WriteLine("1. Fill out a new employee's card"); //Заполнить нового сотрудника
+            Console.WriteLine("1. Fill out a new employee's card");
             Console.WriteLine("2. Edit employee card");
             Console.WriteLine("3. Fire an employee");
             Console.WriteLine("4. Output employee information");
@@ -45,11 +45,12 @@ namespace ARM_Engineer
 
         public static void ShowMainMenu()
         {
-            Console.WriteLine("\nВыберите вариант:");
-            Console.WriteLine("1. Сотрудники");
-            Console.WriteLine("2. Техника");
-            Console.WriteLine("3. Запасные части");
-            Console.WriteLine("Esc. Выход из программы");
+            Console.WriteLine("Main menu");
+            Console.WriteLine("Select an option:");
+            Console.WriteLine("1. Employee");
+            Console.WriteLine("2. Techique");
+            Console.WriteLine("3. Part");
+            Console.WriteLine("Esc. Exiting the program");
         }
 
 
