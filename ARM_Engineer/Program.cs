@@ -1,5 +1,6 @@
 ﻿
 using ARM_Engineer;
+using System.Runtime.InteropServices;
 
 class Program
 {
@@ -15,19 +16,19 @@ class Program
     {
 
         List<Employee> employees = new List<Employee>();
-       
-        States state = States.EmployeeMenu;
+
+        States state = (States)0;
         ConsoleKey command = ConsoleKey.Spacebar;
 
         ConsoleInputInterpreter consoleInputInterpreter = new ConsoleInputInterpreter(employees);
 
         while (true)
         {
-            switch (state)
+            char s = Convert.ToChar(command);
+            switch (state = (States)(int)Char.GetNumericValue(s))
             {
                 case States.MainMenu:
                     ConsoleInterface.ShowMainMenu();
-
                     break;
                 case States.EmployeeMenu:
                     ConsoleInterface.ShowEmployeeMenu();

@@ -9,14 +9,11 @@ namespace ARM_Engineer
 {
     public class ConsoleInputInterpreter
     {
-        
-
         public ConsoleInputInterpreter(List<Employee> employees)
         {
             Employees = employees;
         }
         public List<Employee> Employees { get; set; }
-
         public void InterpretEmployeeCommand(ConsoleKey command)
         {
            switch(command)
@@ -36,6 +33,5 @@ namespace ARM_Engineer
                     break;
            }
         }
-
     }
 }
