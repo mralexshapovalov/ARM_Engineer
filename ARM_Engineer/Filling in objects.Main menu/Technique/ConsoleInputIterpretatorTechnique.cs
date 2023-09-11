@@ -3,20 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static Program;
 
-namespace ARM_Engineer
+namespace ARM_Engineer.Technique
 {
-    public class ConsoleInputInterpreter
+    class ConsoleInputIterpretatorTechnique
     {
         bool IsBoolen = true;
-        public ConsoleInputInterpreter(List<Employee> employees)
+        public ConsoleInputIterpretatorTechnique(List<Technique> techniques)
         {
-            Employees = employees;
+            Techniques = techniques;
         }
-        public List<Employee> Employees { get; set; }
-        
-        public void InterpretEmployeeCommand(ConsoleKey command)
+        public List<Technique> Techniques { get; set; }
+        public void InterpretTechniquesCommand(ConsoleKey command)
         {
             IsBoolen = true;
             while (IsBoolen)
@@ -24,7 +22,7 @@ namespace ARM_Engineer
                 switch (command)
                 {
                     case ConsoleKey.D1:
-                        Employee employee = Employee.CreateEmployeeWithConsole();
+                        Technique techniques = Technique.CreateEmployeeWithConsole();
                         break;
                     case ConsoleKey.D2:
                         break;
@@ -40,14 +38,12 @@ namespace ARM_Engineer
                         break;
                 }
 
-                if(IsBoolen == true)
+                if (IsBoolen == true)
                 {
                     Console.Write(">> ");
                     command = Console.ReadKey().Key;
-                    Console.WriteLine();
+                    Console.WriteLine("\n");
                 }
-
-                
             }
         }
     }

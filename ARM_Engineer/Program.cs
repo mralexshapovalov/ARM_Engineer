@@ -1,5 +1,7 @@
-﻿
-using ARM_Engineer;
+﻿using ARM_Engineer;
+using ARM_Engineer.Employee;
+using ARM_Engineer.Part;
+using ARM_Engineer.Technique;
 using System.Runtime.InteropServices;
 
 class Program
@@ -17,10 +19,16 @@ class Program
     {
         bool IsBoolen = true;
         List<Employee> employees = new List<Employee>();
+        List<Technique> techniques = new List<Technique>();
+        List<Part> parts = new List<Part>();
+
+        ConsoleInputInterpreterEmployee consoleInputInterpreter = new ConsoleInputInterpreterEmployee(employees);
+        ConsoleInputIterpretatorTechnique consoleInputIterpretatorTechnique = new ConsoleInputIterpretatorTechnique(techniques);
+        ConsoleInputInterpreterPart consoleInputIterpretatorPart = new ConsoleInputInterpreterPart(parts);
 
         States state = (States)0;
         ConsoleKey command = ConsoleKey.Spacebar;
-        ConsoleInputInterpreter consoleInputInterpreter = new ConsoleInputInterpreter(employees);
+       
 
         while (IsBoolen)
         {
@@ -41,13 +49,14 @@ class Program
                     break;
                 case States.TechiqueMenu:
                     ConsoleInterface.ShowTechiqueMenu();
+                    consoleInputIterpretatorTechnique.InterpretTechniquesCommand(command = 0);
                     break;
                 case States.PartMenu:
                     ConsoleInterface.ShowPartMenu();
+                    consoleInputIterpretatorPart.InterpretPartCommand(command = 0);
                     break;
                 case States.Esc:
                     IsBoolen = false;
-               
                     break;
                 
                 default:

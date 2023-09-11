@@ -7,16 +7,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace ARM_Engineer
+namespace ARM_Engineer.Employee
 {
     public class Employee
     {
         private int id;
         public int Id
         {
-            get 
-            {                
-                return id; 
+            get
+            {
+                return id;
             }
             private set { id = value; }
         }
@@ -28,8 +28,8 @@ namespace ARM_Engineer
         public DateTime DateOfBirth { get; set; }
         public string Post { get; set; }
         public double Salary { get; set; }
-        public Employee(int id ,string surname, string name, string patronymic, 
-            string description, DateTime dateOfBirth, string post, double salary) 
+        public Employee(int id, string surname, string name, string patronymic,
+            string description, DateTime dateOfBirth, string post, double salary)
         {
             Id = id;
             Surname = surname;
@@ -41,7 +41,7 @@ namespace ARM_Engineer
             Salary = salary;
         }
 
-        public Employee(Employee employee) 
+        public Employee(Employee employee)
         {
             id = employee.id;
             Surname = employee.Surname;

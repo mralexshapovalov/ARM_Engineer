@@ -41,7 +41,8 @@ namespace ARM_Engineer
 
         public static void ShowMainMenu()
         {
-            Console.WriteLine("\nMain menu");
+           
+            Console.WriteLine("Main menu");
             Console.WriteLine("Select an option:");
             Console.WriteLine("1. Employee");
             Console.WriteLine("2. Techique");
