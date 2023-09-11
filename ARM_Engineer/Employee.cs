@@ -71,6 +71,8 @@ namespace ARM_Engineer
             string post = Console.ReadLine();
             Console.Write("Enter salary: ");
             double salary = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Данные успешно записаны");
+            ConsoleInterface.ShowEmployeeMenu();
 
             return new Employee(id, name, surname, patronymic, description, dateOfBirth, post, salary);
         }

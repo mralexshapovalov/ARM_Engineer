@@ -6,24 +6,29 @@ class Program
 {
    enum States
    {
-        MainMenu = 0,
+        MainMenu = -1,
         EmployeeMenu = 1,
         TechiqueMenu = 2,
-        PartMenu = 3
+        PartMenu = 3,
+        Esc = ConsoleKey.Escape
    }
 
     private static void Main(string[] args)
     {
-
+        bool IsBoolen = true;
         List<Employee> employees = new List<Employee>();
 
         States state = (States)0;
         ConsoleKey command = ConsoleKey.Spacebar;
-
         ConsoleInputInterpreter consoleInputInterpreter = new ConsoleInputInterpreter(employees);
 
-        while (true)
+        while (IsBoolen)
         {
+            if(command == ConsoleKey.Escape)
+            {
+                return;
+            }
+
             char s = Convert.ToChar(command);
             switch (state = (States)(int)Char.GetNumericValue(s))
             {
@@ -32,7 +37,7 @@ class Program
                     break;
                 case States.EmployeeMenu:
                     ConsoleInterface.ShowEmployeeMenu();
-                    consoleInputInterpreter.InterpretEmployeeCommand(command);
+                    consoleInputInterpreter.InterpretEmployeeCommand(command = 0);
                     break;
                 case States.TechiqueMenu:
                     ConsoleInterface.ShowTechiqueMenu();
@@ -40,17 +45,23 @@ class Program
                 case States.PartMenu:
                     ConsoleInterface.ShowPartMenu();
                     break;
+                case States.Esc:
+                    IsBoolen = false;
+               
+                    break;
+                
                 default:
                     Console.Write("\n!ERROR.There is no such command. Please repeat again.\n");
                     ConsoleInterface.ShowMainMenu();
                     break;
             }
-            Console.Write(">> ");
-            command = Console.ReadKey().Key;
-            Console.WriteLine();
-
-            
-             
+            if(IsBoolen  == true)
+            {
+                Console.Write(">> ");
+                command = Console.ReadKey().Key;
+                Console.WriteLine();
+            }
+           
 
         }
 
