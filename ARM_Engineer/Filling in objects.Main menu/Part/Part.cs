@@ -23,7 +23,6 @@ namespace ARM_Engineer.Part
         public string Unit { get; set; } //Агрегат
         public string Node { get; set; } //Узел
         public double Cost { get; set; } //Цена
-
         public Part(int id, string article, string nameParts, string unitofMeanSurement, string unit, string node, double cost)
         {
             Id = id;

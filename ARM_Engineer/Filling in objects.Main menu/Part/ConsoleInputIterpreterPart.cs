@@ -18,7 +18,6 @@ namespace ARM_Engineer.Part
         public List<Part> Parts { get; set; }
         public void InterpretPartCommand(ConsoleKey command)
         {
-            IsBoolen = true;
             while (IsBoolen)
             {
                 switch (command)
@@ -41,7 +40,7 @@ namespace ARM_Engineer.Part
                         break;
                 }
 
-                if(IsBoolen == true)
+                if(IsBoolen)
                 {
                     Console.Write(">> ");
                     command = Console.ReadKey().Key;

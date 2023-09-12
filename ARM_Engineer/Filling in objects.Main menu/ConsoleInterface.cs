@@ -8,6 +8,16 @@ namespace ARM_Engineer
 {
     static class ConsoleInterface
     {
+        public static void ShowMainMenu()
+        {
+            
+            Console.WriteLine("\nMain menu");
+            Console.WriteLine("Select an option:");
+            Console.WriteLine("1. Employee");
+            Console.WriteLine("2. Techique");
+            Console.WriteLine("3. Part");
+            Console.WriteLine("Esc. Exiting the program");
+        }
         public static void ShowEmployeeMenu()
         {
             Console.WriteLine("\nEmployee Menu");
@@ -38,19 +48,5 @@ namespace ARM_Engineer
             Console.WriteLine("4. Display a list of part");
             Console.WriteLine("Esc. Return main menu");
         }
-
-        public static void ShowMainMenu()
-        {
-           
-            Console.WriteLine("Main menu");
-            Console.WriteLine("Select an option:");
-            Console.WriteLine("1. Employee");
-            Console.WriteLine("2. Techique");
-            Console.WriteLine("3. Part");
-            Console.WriteLine("Esc. Exiting the program");
-        }
-
-
-
     }
 }

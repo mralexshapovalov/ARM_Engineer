@@ -18,7 +18,6 @@ namespace ARM_Engineer.Employee
         public List<Employee> Employees { get; set; }
         public void InterpretEmployeeCommand(ConsoleKey command)
         {
-            IsBoolen = true;
             while (IsBoolen)
             {
                 switch (command)
@@ -35,15 +34,14 @@ namespace ARM_Engineer.Employee
                     case ConsoleKey.D5:
                         break;
                     case ConsoleKey.Escape:
-                        Console.WriteLine();
+                        Console.Write("\n");
                         ConsoleInterface.ShowMainMenu();
                         IsBoolen = false;
                         break;
                 }
 
-                if(IsBoolen == true)
+                if(IsBoolen)
                 {
-                    
                     Console.Write(">> ");
                     command = Console.ReadKey().Key;
                     Console.WriteLine();

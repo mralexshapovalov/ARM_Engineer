@@ -20,7 +20,6 @@ namespace ARM_Engineer.Employee
             }
             private set { id = value; }
         }
-
         public string Surname { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
@@ -88,6 +87,5 @@ namespace ARM_Engineer.Employee
         {
             throw new NotImplementedException();
         }
-
     }
 }

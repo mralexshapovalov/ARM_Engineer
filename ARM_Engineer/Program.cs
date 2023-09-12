@@ -14,7 +14,6 @@ class Program
         PartMenu = 3,
         Esc = ConsoleKey.Escape
    }
-
     private static void Main(string[] args)
     {
         bool IsBoolen = true;
@@ -26,56 +25,43 @@ class Program
         ConsoleInputIterpretatorTechnique consoleInputIterpretatorTechnique = new ConsoleInputIterpretatorTechnique(techniques);
         ConsoleInputInterpreterPart consoleInputIterpretatorPart = new ConsoleInputInterpreterPart(parts);
 
-        States state = (States)0;
-        ConsoleKey command = ConsoleKey.Spacebar;
-       
-
+        States state = States.MainMenu;
+        ConsoleKey command = 0;
+   
         while (IsBoolen)
         {
-            if(command == ConsoleKey.Escape)
-            {
+            if (command == ConsoleKey.Escape)
                 return;
-            }
-
-            char s = Convert.ToChar(command);
-            switch (state = (States)(int)Char.GetNumericValue(s))
+        
+            switch (state = (States)(int)Char.GetNumericValue(Convert.ToChar(command)))
             {
                 case States.MainMenu:
                     ConsoleInterface.ShowMainMenu();
                     break;
                 case States.EmployeeMenu:
                     ConsoleInterface.ShowEmployeeMenu();
-                    consoleInputInterpreter.InterpretEmployeeCommand(command = 0);
+                    consoleInputInterpreter.InterpretEmployeeCommand(command = (ConsoleKey)state);
                     break;
                 case States.TechiqueMenu:
                     ConsoleInterface.ShowTechiqueMenu();
-                    consoleInputIterpretatorTechnique.InterpretTechniquesCommand(command = 0);
+                    consoleInputIterpretatorTechnique.InterpretTechniquesCommand(command = (ConsoleKey)state);
                     break;
                 case States.PartMenu:
                     ConsoleInterface.ShowPartMenu();
-                    consoleInputIterpretatorPart.InterpretPartCommand(command = 0);
+                    consoleInputIterpretatorPart.InterpretPartCommand(command = (ConsoleKey)state);
                     break;
-                case States.Esc:
-                    IsBoolen = false;
-                    break;
-                
                 default:
-                    Console.Write("\n!ERROR.There is no such command. Please repeat again.\n");
+                    Console.WriteLine("\n!ERROR.There is no such command. Please repeat again.");
                     ConsoleInterface.ShowMainMenu();
                     break;
             }
-            if(IsBoolen  == true)
+
+            if(IsBoolen)
             {
                 Console.Write(">> ");
                 command = Console.ReadKey().Key;
                 Console.WriteLine();
             }
-           
-
         }
-
-        
-
-
     }
 }

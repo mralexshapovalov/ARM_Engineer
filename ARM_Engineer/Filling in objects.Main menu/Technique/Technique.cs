@@ -28,7 +28,6 @@ namespace ARM_Engineer.Technique
         public DateTime YearOfRelease { get; set; } //Год выпуска
         public double EngineCapacity { get; set; } //Объем двигателя
         public int HP { get; set; } //Лошадинные силы
-
         public Technique(int id, string classOfEquipment, string brand, string model, string inventoryNumber, string stateNumber, 
             string identificationNumber, DateTime yearOfRelease, double engineCapacity , int hp)
         {
@@ -43,7 +42,6 @@ namespace ARM_Engineer.Technique
             EngineCapacity = engineCapacity;
             HP = hp;
         }
-
         public Technique(Technique technique)
         {
             Id = id;
@@ -57,7 +55,6 @@ namespace ARM_Engineer.Technique
             EngineCapacity = technique.EngineCapacity;
             HP = technique.HP;
         }
-
         static public Technique CreateEmployeeWithConsole()
         {
             Console.Write("Enter Id: ");
@@ -85,12 +82,10 @@ namespace ARM_Engineer.Technique
 
             return new Technique(id, classOfEquipment, brand, model, inventoryNumber, identificationNumber, stateNumber, year, engineCapacity, HP);
         }
-
         public void AddTechniqueToDatabase()
         {
             throw new NotImplementedException();
         }
-
         public void DismissalTechniqueToDataBase(int id)
         {
             throw new NotImplementedException();
