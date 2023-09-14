@@ -6,14 +6,14 @@ using System.Runtime.InteropServices;
 
 class Program
 {
-   enum States
-   {
+    enum States
+    {
         MainMenu = -1,
         EmployeeMenu = 1,
         TechiqueMenu = 2,
         PartMenu = 3,
         Esc = ConsoleKey.Escape
-   }
+    }
     private static void Main(string[] args)
     {
         bool IsBoolen = true;

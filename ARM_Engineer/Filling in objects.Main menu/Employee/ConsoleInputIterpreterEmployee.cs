@@ -26,6 +26,7 @@ namespace ARM_Engineer.Employee
                         Employee employee = Employee.CreateEmployeeWithConsole();
                         break;
                     case ConsoleKey.D2:
+                        Employee.EditEmployeeWithConsole(Employees);
                         break;
                     case ConsoleKey.D3:
                         break;
