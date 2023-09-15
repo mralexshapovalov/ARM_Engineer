@@ -25,6 +25,7 @@ namespace ARM_Engineer.Technique
                         Technique techniques = Technique.CreateEmployeeWithConsole();
                         break;
                     case ConsoleKey.D2:
+                        Technique.EditTechniqueConsole(Techniques);
                         break;
                     case ConsoleKey.D3:
                         break;

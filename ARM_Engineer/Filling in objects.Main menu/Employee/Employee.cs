@@ -39,7 +39,6 @@ namespace ARM_Engineer.Employee
             Post = post;
             Salary = salary;
         }
-
         public Employee(Employee employee)
         {
             id = employee.id;
@@ -51,7 +50,6 @@ namespace ARM_Engineer.Employee
             Post = employee.Post;
             Salary = employee.Salary;
         }
-
         static public Employee CreateEmployeeWithConsole()
         {
             Console.Write("Enter Id: ");
@@ -75,10 +73,8 @@ namespace ARM_Engineer.Employee
 
             return new Employee(id, name, surname, patronymic, description, dateOfBirth, post, salary);
         }
-
         static Employee EditEmployeeMenu(Employee employee)
         {
-
             Console.WriteLine("Выбирете действие:");
             Console.WriteLine("1. Edit name");
             Console.WriteLine("2. Edit surname");
@@ -126,12 +122,8 @@ namespace ARM_Engineer.Employee
                 default:
                     Console.WriteLine("\n!ERROR.There is no such command. Please repeat again.");
                     throw new NotImplementedException();
-
             }
         }
-        
-
-
         static public void EditEmployeeWithConsole(List<Employee> employee)
         {
             Console.Write("Enter id : ");
@@ -149,12 +141,11 @@ namespace ARM_Engineer.Employee
                    catch
                    {
                        Console.WriteLine("Неизвестная команда");
-
                    } 
                 } 
             }
             Console.WriteLine("Не найдет id номер.");
-
+            ConsoleInterface.ShowEmployeeMenu();
         }
         static public List<Employee> ReadDataBaseToList()
         {

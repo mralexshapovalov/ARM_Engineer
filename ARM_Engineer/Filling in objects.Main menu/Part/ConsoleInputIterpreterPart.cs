@@ -26,6 +26,7 @@ namespace ARM_Engineer.Part
                         Part parts = Part.CreatePartWithConsole();
                         break;
                     case ConsoleKey.D2:
+                        Part.EditPartWithConsole(Parts);
                         break;
                     case ConsoleKey.D3:
                         break;
